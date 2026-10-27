@@ -1,0 +1,272 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #20243a;
+  background: #f3f5fb;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.todo-page {
+  min-height: 100vh;
+  padding: 64px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: radial-gradient(circle at top left, #e2e8ff, transparent 45%),
+    #f5f6fc;
+}
+
+.todo-card {
+  width: 100%;
+  max-width: 680px;
+  padding: 40px;
+  background: #ffffff;
+  border: 1px solid #e8eaf3;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(37, 46, 92, 0.09);
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #6558d9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 42px);
+  letter-spacing: -1.5px;
+}
+
+.subtitle {
+  margin: 12px 0 28px;
+  color: #777d91;
+  line-height: 1.6;
+}
+
+.progress-box {
+  padding: 18px;
+  background: #f7f7ff;
+  border: 1px solid #ededff;
+  border-radius: 14px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.progress-label strong {
+  color: #6558d9;
+}
+
+.progress-track {
+  height: 8px;
+  overflow: hidden;
+  background: #e4e5f3;
+  border-radius: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7667f0, #a28aff);
+  border-radius: 20px;
+  transition: width 0.25s ease;
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin: 26px 0 30px;
+}
+
+.todo-form input {
+  min-width: 0;
+  flex: 1;
+  padding: 14px 16px;
+  color: #20243a;
+  background: #fff;
+  border: 1px solid #dfe2ed;
+  border-radius: 11px;
+  outline: none;
+}
+
+.todo-form input:focus {
+  border-color: #7667f0;
+  box-shadow: 0 0 0 3px #7667f01c;
+}
+
+.todo-form button {
+  padding: 0 20px;
+  color: #fff;
+  background: #6558d9;
+  border: 0;
+  border-radius: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.todo-form button:hover {
+  background: #5145c2;
+}
+
+.todo-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.list-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.list-heading > span {
+  padding: 6px 10px;
+  color: #6c6f83;
+  background: #f0f1f8;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.todo-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px;
+  border: 1px solid #e9eaf2;
+  border-radius: 12px;
+}
+
+.todo-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.todo-label input {
+  width: 17px;
+  height: 17px;
+  accent-color: #6558d9;
+  flex-shrink: 0;
+}
+
+.todo-title {
+  overflow-wrap: anywhere;
+}
+
+.todo-title.completed {
+  color: #9699a9;
+  text-decoration: line-through;
+}
+
+.delete-button {
+  padding: 7px 10px;
+  color: #d4485b;
+  background: #fff1f3;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: #ffe0e5;
+}
+
+.empty-state,
+.empty-message {
+  padding: 30px 10px;
+  text-align: center;
+  color: #777d91;
+}
+
+.empty-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #6558d9;
+  background: #efedff;
+  border-radius: 50%;
+  font-size: 23px;
+}
+
+.empty-state h3 {
+  margin: 12px 0 6px;
+  color: #20243a;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.error-message {
+  padding: 12px;
+  color: #b42336;
+  background: #fff1f3;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.footer-note {
+  margin: 28px 0 0;
+  color: #999daf;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .todo-page {
+    padding: 24px 12px;
+  }
+
+  .todo-card {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form button {
+    min-height: 46px;
+  }
+
+  .progress-label {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,19 @@
+// Prisma Client configuration
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+// PostgreSQL database
+datasource db {
+  provider = "postgresql"
+}
+
+// Todo model
+model Todo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  completed Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
